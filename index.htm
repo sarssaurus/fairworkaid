@@ -2,222 +2,181 @@
 <html lang="en">
 
 <head>
-  <title>W3.CSS Template</title>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bootstrap Responsive Menu</title>
   <!-- Add Bootstrap CSS link -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
   <style>
-    /* Your custom styles here */
-    body, h1, h2, h3, h4, h5 {
-      font-family: "Raleway", sans-serif;
-    }
-    .w3-quarter img {
-      margin-bottom: -6px;
-      cursor: pointer;
-    }
-    .w3-quarter img:hover {
-      opacity: 0.6;
-      transition: 0.3s;
+    /* Add your custom styles here */
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      margin: 0;
+      padding: 0;
     }
 
-    /* Custom styles for the large inspirational section */
-    .large-inspirational-section {
-      height: 100vh; /* Make the section take up the full viewport height */
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      background-color: #f8f9fa; /* Light gray background for the section */
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
     }
 
-    .large-inspirational-section img {
-      max-width: 100%;
-      max-height: 100%;
+    .navbar {
+      padding: 15px;
+    }
+
+    .navbar-brand {
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    .navbar-toggler-icon {
+      background-color: #333;
+    }
+
+    .nav-item {
+      margin: 0 5px;
+    }
+
+    .nav-link {
+      color: #333;
+    }
+
+    .dropdown-menu {
+      background-color: #f8f9fa;
+    }
+
+    .dropdown-item {
+      color: #333;
+    }
+
+    h2 {
+      color: #007bff;
+    }
+
+    h2,
+    p {
+      margin-bottom: 15px;
+    }
+
+    ol,
+    ul {
+      margin: 0;
+      padding-left: 20px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 15px;
+      background-color: #f8f9fa;
     }
   </style>
 </head>
 
-<body class="w3-light-grey">
-
-  <!-- Sidebar/menu -->
-  <nav class="w3-sidebar w3-bar-block w3-black w3-animate-right w3-top w3-text-light-grey w3-large"
-    style="z-index:3;width:250px;font-weight:bold;display:none;right:0;" id="mySidebar">
-    <a href="javascript:void()" onclick="w3_close()" class="w3-bar-item w3-button w3-center w3-padding-32">CLOSE</a>
-    <a href="#" onclick="w3_close()" class="w3-bar-item w3-button w3-center w3-padding-16">PORTFOLIO</a>
-    <a href="#about" onclick="w3_close()" class="w3-bar-item w3-button w3-center w3-padding-16">ABOUT ME</a>
-    <a href="#contact" onclick="w3_close()" class="w3-bar-item w3-button w3-center w3-padding-16">CONTACT</a>
-  </nav>
-
-  <!-- Top menu on small screens -->
-  <header class="w3-container w3-top w3-white w3-xlarge w3-padding-16">
-    <span class="w3-left w3-padding">SOME NAME</span>
-    <a href="javascript:void(0)" class="w3-right w3-button w3-white" onclick="w3_open()">☰</a>
-  </header>
-
-  <!-- Overlay effect when opening sidebar on small screens -->
-  <div class="w3-overlay w3-animate-opacity" onclick="w3_close()" style="cursor:pointer" title="close side menu"
-    id="myOverlay"></div>
-
-  <!-- !PAGE CONTENT! -->
-  <div class="w3-main w3-content" style="max-width:1600px;margin-top:83px">
-
-    <!-- Large Inspirational Section -->
-    <div class="large-inspirational-section">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-4">
-            <img src="path/to/your/family-image.jpg" alt="Family" class="img-fluid">
-          </div>
-          <div class="col-md-4">
-            <img src="path/to/your/blue-collar-worker-image.jpg" alt="Blue Collar Worker" class="img-fluid">
-          </div>
-          <div class="col-md-4">
-            <img src="path/to/your/justice-scales-image.jpg" alt="Justice Scales" class="img-fluid">
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Rest of your content from the first code -->
-
-    <!-- Pagination -->
-    <div class="w3-center w3-padding-32">
-      <div class="w3-bar">
-        <a href="#" class="w3-bar-item w3-button w3-hover-black">«</a>
-        <a href="#" class="w3-bar-item w3-black w3-button">1</a>
-        <a href="#" class="w3-bar-item w3-button w3-hover-black">2</a>
-        <a href="#" class="w3-bar-item w3-button w3-hover-black">3</a>
-        <a href="#" class="w3-bar-item w3-button w3-hover-black">4</a>
-        <a href="#" class="w3-bar-item w3-button w3-hover-black">»</a>
-      </div>
-    </div>
-
-    <!-- Modal for full size images on click -->
-    <div id="modal01" class="w3-modal w3-black" style="padding-top:0" onclick="this.style.display='none'">
-      <span class="w3-button w3-black w3-xlarge w3-display-topright">×</span>
-      <div class="w3-modal-content w3-animate-zoom w3-center w3-transparent w3-padding-64">
-        <img id="img01" class="w3-image">
-        <p id="caption"></p>
-      </div>
-    </div>
-
-    <!-- About section -->
-    <div class="w3-container w3-dark-grey w3-center w3-text-light-grey w3-padding-32" id="about">
-      <!-- Rest of your about section content from the first code -->
-    </div>
-
-    <!-- Contact section -->
-    <div class="w3-container w3-light-grey w3-padding-32 w3-padding-large" id="contact">
-      <!-- Rest of your contact section content from the first code -->
-    </div>
-
-    <!-- Footer -->
-    <footer class="w3-container w3-padding-32 w3-grey">
-      <!-- Rest of your footer content from the first code -->
-    </footer>
-
-    <div class="w3-black w3-center w3-padding-24">Powered by <a href="https://www.w3schools.com/w3css 
-
-<!-- Rest of the combined content goes here -->
-
-<!-- Your page content goes here -->
-
-<div class="container mt-4">
-  <!-- Rest of your content goes here -->
-</div>
-
-<!-- Pagination -->
-<div class="w3-center w3-padding-32">
-  <div class="w3-bar">
-    <a href="#" class="w3-bar-item w3-button w3-hover-black">«</a>
-    <a href="#" class="w3-bar-item w3-black w3-button">1</a>
-    <a href="#" class="w3-bar-item w3-button w3-hover-black">2</a>
-    <a href="#" class="w3-bar-item w3-button w3-hover-black">3</a>
-    <a href="#" class="w3-bar-item w3-button w3-hover-black">4</a>
-    <a href="#" class="w3-bar-item w3-button w3-hover-black">»</a>
-  </div>
-</div>
-
-<!-- Modal for full-size images on click-->
-<div id="modal01" class="w3-modal w3-black" style="padding-top:0" onclick="this.style.display='none'">
-  <span class="w3-button w3-black w3-xlarge w3-display-topright">×</span>
-  <div class="w3-modal-content w3-animate-zoom w3-center w3-transparent w3-padding-64">
-    <img id="img01" class="w3-image">
-    <p id="caption"></p>
-  </div>
-</div>
-
-<!-- Footer -->
-<footer class="w3-container w3-padding-32 w3-grey">
-  <div class="w3-row-padding">
-    <div class="w3-third">
-      <h3>INFO</h3>
-      <p>Praesent tincidunt sed tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla.</p>
-    </div>
-
-    <div class="w3-third">
-      <h3>BLOG POSTS</h3>
-      <ul class="w3-ul">
-        <li class="w3-padding-16 w3-hover-black">
-          <img src="/w3images/workshop.jpg" class="w3-left w3-margin-right" style="width:50px">
-          <span class="w3-large">Lorem</span><br>
-          <span>Sed mattis nunc</span>
-        </li>
-        <li class="w3-padding-16 w3-hover-black">
-          <img src="/w3images/gondol.jpg" class="w3-left w3-margin-right" style="width:50px">
-          <span class="w3-large">Ipsum</span><br>
-          <span>Praes tinci sed</span>
-        </li>
+<body>
+  <!-- Responsive Navbar -->
+  <nav class="navbar navbar-expand-md navbar-light bg-light">
+    <a class="navbar-brand" href="#">fAIrWork AId</a>
+    <!-- Hamburger menu button for small screens -->
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
+      aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+      <ul class="navbar-nav ml-auto" id="menuItems">
+        <!-- Navigation items will be added dynamically here -->
       </ul>
     </div>
+  </nav>
 
-    <div class="w3-third">
-      <h3>POPULAR TAGS</h3>
-      <p>
-        <span class="w3-tag w3-black w3-margin-bottom">Travel</span> <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom">New York</span> <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom">London</span>
-        <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom">IKEA</span> <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom">NORWAY</span> <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom">DIY</span>
-        <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom">Ideas</span> <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom">Baby</span> <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom">Family</span>
-        <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom">News</span> <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom">Clothing</span> <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom">Shopping</span>
-        <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom">Sports</span> <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom">Games</span>
-      </p>
-    </div>
+  <!-- Your page content goes here -->
+
+  <div class="container mt-4">
+    <h2>Our Mission</h2>
+    <p>At fAIrwork.AId, our mission is simple: to help Australian laborers like you understand your rights and get
+      help with workplace issues. We're here to make legal information easy to access and understand.</p>
+
+    <h2>How to Use</h2>
+    <ol>
+      <li>Describe your workplace issue in your own words</li>
+      <li>Our smart AI reviews your issue and suggests next steps</li>
+      <li>Get personalized legal information and advice tailored to your situation</li>
+      <li>We walk you through legal processes step-by-step</li>
+      <li>Contact our team of lawyers for affordable help</li>
+    </ol>
+    <p>Start getting the justice you deserve today!</p>
+
+    <h2>About Us</h2>
+    <p>fAIrwork.AId was founded by four legal innovators passionate about employment rights:</p>
+    <ul>
+      <li>Amber Cambareri</li>
+      <li>Aminah Hussain</li>
+      <li>Alysa Narang</li>
+      <li>Sara Rusnak</li>
+    </ul>
+    <p>Our team combines legal expertise with cutting-edge AI technology to create a supportive, personalized
+      experience. We're always here to answer your questions and advocate for your workplace rights. Welcome to the
+      fAIrwork.AId community!</p>
   </div>
-</footer>
 
-<div class="w3-black w3-center w3-padding-24">Powered by <a href="https://www.w3schools.com/w3css/default.asp" title="W3.CSS" target="_blank" class="w3-hover-opacity">w3.css</a></div>
+  <!-- Add your content here -->
 
-<!-- End page content -->
-</div>
+  <!-- Import jQuery, Popper, and Bootstrap JS scripts -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.10.2/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script>
+    // JavaScript to create responsive menu items dynamically
+    const menuItems = [
+      { text: "Our Mission", link: "#our-mission" },
+      { text: "How to Use", link: "#how-to-use" },
+      { text: "About Us", link: "#about-us" },
+      {
+        text: "Types of Claims", subItems: [
+          { text: "Unfair Dismissal", link: "#unfair-dismissal" },
+          { text: "Discrimination", link: "#discrimination" },
+          { text: "Underpayment", link: "#underpayment" },
+          { text: "Workcover", link: "#workcover" },
+          { text: "General protection", link: "#general-protection" },
+          { text: "Workplace Harassment", link: "#workplace-harassment" }
+        ]
+      }
+    ];
 
-<script>
-  // Script to open and close sidebar
-  function w3_open() {
-    document.getElementById("mySidebar").style.display = "block";
-    document.getElementById("myOverlay").style.display = "block";
-  }
+    const menuList = document.getElementById("menuItems");
+    menuItems.forEach(item => {
+      const li = document.createElement("li");
+      const a = document.createElement("a");
+      a.classList.add("nav-link");
+      a.textContent = item.text;
+      a.href = item.link;
+      li.classList.add("nav-item");
 
-  function w3_close() {
-    document.getElementById("mySidebar").style.display = "none";
-    document.getElementById("myOverlay").style.display = "none";
-  }
+      if (item.subItems) {
+        const div = document.createElement("div");
+        div.classList.add("dropdown");
+        div.innerHTML = `
+          <a class="nav-link dropdown-toggle" href="#" id="${item.text.toLowerCase().replace(/\s+/g, '-')}-dropdown"
+            role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            ${item.text}
+          </a>
+          <div class="dropdown-menu" aria-labelledby="${item.text.toLowerCase().replace(/\s+/g, '-')}-dropdown">
+            ${item.subItems
+              .map(
+                subItem => `<a class="dropdown-item" href="${subItem.link}">${subItem.text}</a>`
+              )
+              .join("")}
+          </div>
+        `;
+        li.appendChild(div);
+      } else {
+        li.appendChild(a);
+      }
 
-  // Modal Image Gallery
-  function onClick(element) {
-    document.getElementById("img01").src = element.src;
-    document.getElementById("modal01").style.display = "block";
-    var captionText = document.getElementById("caption");
-    captionText.innerHTML = element.alt;
-  }
-
-</script>
-
-<!-- Import jQuery, Popper, and Bootstrap JS scripts -->
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.10.2/umd/popper.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script> 
-
+      menuList.appendChild(li);
+    });
+  </script>
 </body>
 
 </html>
+
