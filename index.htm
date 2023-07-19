@@ -193,10 +193,6 @@
 </body>
 
 </html>
-<script>
-  // JavaScript to create responsive menu items dynamically
-  const menuItems = [
-    { text: "
 <!DOCTYPE html>
 <html lang="en">
 
@@ -365,8 +361,8 @@
     <ul>
       <li><a href="https://www.linkedin.com/in/amber-cambareri-a53922210/">Amber Cambareri</a></li>
       <li><a href="#">Aminah Hussain</a></li>
-      <li><a href="#">Alysa Narang</a></li>
-      <li><a href="#">Sara Rusnak</a></li>
+      <li><a href="https://www.linkedin.com/in/alysa-narang/">Alysa Narang</a></li>
+      <li><a href="https://www.linkedin.com/in/sara-rusnak/">Sara Rusnak</a></li>
     </ul>
     <p>Our team combines legal expertise with cutting-edge AI technology to create a supportive, personalized
       experience. We're always here to answer your questions and advocate for your workplace rights. Welcome to the
@@ -375,4 +371,54 @@
 </body>
 
 </html>
+<script>
+  // JavaScript to create responsive menu items dynamically
+  const menuItems = [
+    { text: "Our Mission", link: "our-mission.html" }, // Updated link
+    { text: "How to Use", link: "how-to-use.html" }, // Updated link
+    { text: "About Us", link: "about-us.html" }, // Updated link
+    {
+      text: "Types of Claims", subItems: [
+        { text: "Unfair Dismissal", link: "#unfair-dismissal" },
+        { text: "Discrimination", link: "#discrimination" },
+        { text: "Underpayment", link: "#underpayment" },
+        { text: "Workcover", link: "#workcover" },
+        { text: "General protection", link: "#general-protection" },
+        { text: "Workplace Harassment", link: "#workplace-harassment" }
+      ]
+    }
+  ];
 
+  const menuList = document.getElementById("menuItems");
+  menuItems.forEach(item => {
+    const li = document.createElement("li");
+    const a = document.createElement("a");
+    a.classList.add("nav-link");
+    a.textContent = item.text;
+    a.href = item.link;
+    li.classList.add("nav-item");
+
+    if (item.subItems) {
+      const div = document.createElement("div");
+      div.classList.add("dropdown");
+      div.innerHTML = `
+        <a class="nav-link dropdown-toggle" href="#" id="${item.text.toLowerCase().replace(/\s+/g, '-')}-dropdown"
+          role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          ${item.text}
+        </a>
+        <div class="dropdown-menu" aria-labelledby="${item.text.toLowerCase().replace(/\s+/g, '-')}-dropdown">
+          ${item.subItems
+            .map(
+              subItem => `<a class="dropdown-item" href="${subItem.link}">${subItem.text}</a>`
+            )
+            .join("")}
+        </div>
+      `;
+      li.appendChild(div);
+    } else {
+      li.appendChild(a);
+    }
+
+    menuList.appendChild(li);
+  });
+</script>
