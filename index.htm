@@ -77,6 +77,20 @@
       padding: 15px;
       background-color: #f8f9fa;
     }
+
+    /* Custom styles for the large inspirational section */
+    .large-inspirational-section {
+      height: 100vh; /* Make the section take up the full viewport height */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #f8f9fa; /* Light gray background for the section */
+    }
+
+    .large-inspirational-section img {
+      max-width: 100%;
+      max-height: 100%;
+    }
   </style>
 </head>
 
@@ -96,10 +110,27 @@
     </div>
   </nav>
 
+  <!-- Large Inspirational Section -->
+  <div class="large-inspirational-section">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4">
+          <img src="path/to/your/family-image.jpg" alt="Family" class="img-fluid">
+        </div>
+        <div class="col-md-4">
+          <img src="path/to/your/blue-collar-worker-image.jpg" alt="Blue Collar Worker" class="img-fluid">
+        </div>
+        <div class="col-md-4">
+          <img src="path/to/your/justice-scales-image.jpg" alt="Justice Scales" class="img-fluid">
+        </div>
+      </div>
+    </div>
+  </div>
+
   <!-- Your page content goes here -->
 
   <div class="container mt-4">
-    <!-- Your content goes here -->
+    <!-- Rest of your content goes here -->
   </div>
 
   <!-- Add your content here -->
@@ -162,3 +193,4 @@
 </body>
 
 </html>
+
